@@ -9,6 +9,8 @@ fn eh_personality() {}
 #[panic_handler]
 fn panic_handler(_info: &core::panic::PanicInfo) -> ! { loop {} }
 
+extern crate compiler_builtins;
+
 #[no_mangle]
 pub extern "efiapi" fn efi_main() {
     let x = [0u8; 4096];
